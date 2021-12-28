@@ -41,6 +41,7 @@ const NewTask = () => {
           ...data,
           id: uuid.v4()
         }))
+
         setData({
           id: '',
           title: '',
@@ -49,6 +50,12 @@ const NewTask = () => {
           piority: 'normal',
           status: false
         })
+
+        setErrors({
+          titleError: '',
+          dueDateError: ''
+        })
+
       } else {
         setErrors({
           titleError: messError ? messError : '',
