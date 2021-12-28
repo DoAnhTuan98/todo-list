@@ -1,0 +1,17 @@
+@mixin label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@mixin title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+@mixin mobile {
+    @media(max-width:800px) {
+        @content
+    }
+}
