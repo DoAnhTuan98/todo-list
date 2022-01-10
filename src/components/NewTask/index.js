@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { validateTitle, validateDueDate } from '../../utils/validate'
 import { addNewTaks } from '../../stores/todos/action'
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux'
 import * as uuid from 'uuid'
 
 const today = new Date();
-const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+const day = today.getDate() < 10 ? `0${today.getDate()}` : `${today.getDate()}`
+const month = (today.getMonth() + 1) < 10 ? `0${today.getMonth() +1}` : `${today.getMonth() +1}`
+const year = today.getFullYear()
+const date = year+'-'+month+'-'+day
 
 const NewTask = () => {
     const [data, setData] = useState({
